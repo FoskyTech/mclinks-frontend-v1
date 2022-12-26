@@ -13,13 +13,13 @@
 	<link rel="icon" href="/static/img/logo.png"> 
 
 	<meta property="og:title" content="MC导航网 - 做最好的我的世界导航网！">
-	<meta property="og:image" content="https://mclinks.cc/static/img/logo.png">
-	<meta property="og:url" content="https://mclinks.cc">
+	<meta property="og:image" content="https://mclinks.site/static/img/logo.png">
+	<meta property="og:url" content="https://mclinks.site">
 	<meta property="og:site_name" content="MC导航网">
 	<meta property="og:description" content="MC导航网收录了一系列与MC相关的网站，帮助大家更好的找到自己想要的网站，方便大家。做最好的我的世界导航网！">
 	<meta name="twitter:title" content="MC导航网 - 做最好的我的世界导航网！">
-	<meta name="twitter:image" content="https://mclinks.cc/static/img/logo.png">
-	<meta name="twitter:url" content="https://mclinks.cc">
+	<meta name="twitter:image" content="https://mclinks.site/static/img/logo.png">
+	<meta name="twitter:url" content="https://mclinks.site">
 	<meta name="twitter:card" content="MC导航网收录了一系列与MC相关的网站，帮助大家更好的找到自己想要的网站，方便大家。做最好的我的世界导航网！">
 	
 	<link href="https://lib.baomitu.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -136,7 +136,7 @@
 	$(document).ready(function() {
 		$.ajax({
 			type: 'post',
-			url: "/ajax/data",
+			url: "https://mclinks.site/ajax/data",
 			data: {sign: '{$Request.token.sign}'},
 			dataType: 'json',
 			success: function(res) {
@@ -187,7 +187,7 @@
 		if (data.user.is_login) {
 			$.ajax({
 				type: 'post',
-				url: "/ajax/user",
+				url: "https://mclinks.site/ajax/user",
 				dataType: 'json',
 				success: function(res) {
 					if (res.error == 1) {
@@ -718,7 +718,7 @@
 			});*/
 		},
 		user_logout: function() {
-			$.post('ajax/logout', {}, function(res) {
+			$.post('https://mclinks.site/ajax/logout', {}, function(res) {
 				if (res.error == 0) {
 					Toast.fire({
 						icon: 'success',
@@ -779,7 +779,7 @@
 				$.ajax({
 					type: 'post',
 					dataType: 'json',
-					url: '/ajax/status',
+					url: 'https://mclinks.site/ajax/status',
 					timeout: 10000,
 					data: {
 						t: t
@@ -820,7 +820,7 @@
 				btn.attr('disabled', true);
 				$.ajax({
 					type: 'post',
-					url: '/ajax/support',
+					url: 'https://mclinks.site/ajax/support',
 					data: $('#support_payment').serialize(),
 					dataType: 'json',
 					success: function(res) {
