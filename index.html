@@ -137,7 +137,9 @@
 		$.ajax({
 			type: 'post',
 			url: "https://mclinks.site/ajax/data",
-			data: {sign: '{$Request.token.sign}'},
+			data: {
+				/*sign: '{$Request.token.sign}'*/
+			},
 			dataType: 'json',
 			success: function(res) {
 				if (res.error == 1) {
