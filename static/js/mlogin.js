@@ -1,8 +1,8 @@
-const server_base_uri = 'https://mlogin.cc/';
+const server_base_uri = 'https://mlogin.cc';
 
-const authorize_route = server_base_uri + 'oauth/authorize';
-const resource_route = server_base_uri + 'api/me';
-const login_route = server_base_uri + 'user/login';
+const authorize_route = server_base_uri + '/oauth/authorize';
+const resource_route = server_base_uri + '/api/me';
+const login_route = server_base_uri + '/user/login';
 
 function mlogin() {
   this.config = {
@@ -116,6 +116,7 @@ mlogin.prototype.popup = function(state, method='authorize', params=[]) {
 
 mlogin.prototype._popup_listner = function() {
   window.addEventListener('message', function(e){
+    if (e.origin !== server_base_uri) return;
     if (e.data == 'mlogin_close'){
       mlogin.element.background.parentNode.removeChild(mlogin.element.background);
       mlogin.element.iframe.parentNode.removeChild(mlogin.element.iframe);
